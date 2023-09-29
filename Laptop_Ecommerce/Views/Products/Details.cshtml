@@ -8,8 +8,6 @@
 
 <link rel="stylesheet" href="~/Views/Products/Detailstyle.css">
 
-<h2>Details</h2>
-
 
 <div class="row">
     <div class="col-md-6">
@@ -40,24 +38,6 @@
     </div>
 </div>
 
-@*<script>
-        function addToCart(productId) {
-            $.ajax({
-                type: "POST",
-                url: "/Products/AddToCart/" + productId,
-                success: function (result) {
-                    if (result.success) {
-                        alert(result.message);
-                    } else {
-                        alert("Failed to add product to cart.");
-                    }
-                },
-                error: function () {
-                    alert("An error occurred while adding the product to the cart.");
-                }
-            });
-        }
-    </script>*@
 
 <script>
     function addToCart(productId) {
@@ -87,4 +67,38 @@
             }
         });
     }
+
 </script>
+
+<style>
+    .product-image-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    .product-details {
+        border: none;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .product-description-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px; /* Adjust margin as needed */
+    }
+
+    .form-control{
+        max-width: 16%;
+    }
+
+    .add-to-cart-button {
+        width: 100%;
+    }
+
+</style>

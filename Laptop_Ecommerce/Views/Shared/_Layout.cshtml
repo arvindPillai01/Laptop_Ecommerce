@@ -7,41 +7,57 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <style>
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*background-image: url("~/Data/bgWallpaper.jpg");*/ /* Replace 'path_to_your_image.jpg' with your image URL */
+/*            background-color: #F6F4EB;*/
+        }
 
+        .navbar {
+            background-color: #4682A9;
+        }
+
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("Digital Retailers Inc.", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-	                <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Cart", "Cart", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-	                @*<li class="nav-item">
+<div class="background-image"></div>
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark">
+	<div class="container">
+		@Html.ActionLink("Digital Retailers Inc.", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+		<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+		        aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+			<ul class="navbar-nav flex-grow-1">
+				<li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+				@*<li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>*@
+				<li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+				<li>@Html.ActionLink("Cart", "Cart", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+				@*<li class="nav-item">
 		                <a class="nav-link" href="@Url.Action("Cart", "Home")"><i class="fa-regular fa-cart-shopping" style="color: #8ebfd7; font-size: 1.25rem;"></i></a>
 	                </li>*@
-                </ul>
-                 @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+			</ul>
+			@Html.Partial("_LoginPartial")
+		</div>
+	</div>
+</nav>
+<div class="container body-content">
+	@RenderBody()
+	<hr/>
+	<footer>
+		<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+	</footer>
+</div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
 
 
 </body>

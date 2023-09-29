@@ -15,7 +15,7 @@
         {
 	        <div class="col-md-4">
 		        <div class="card product-item">
-			        <a href="@Url.Action("Details", "Products", new { id = product.Id })">
+			        <a  style="text-decoration:none"  href="@Url.Action("Details", "Products", new { id = product.Id })">
 				        <img src="@product.ImageUrl" alt="@product.Name" class="card-img-top img-fluid" style="height: 200px;">
 				        <div class="card-body">
 					        <h5 class="card-title">@product.Name</h5>
@@ -29,6 +29,41 @@
     </div>
 </div>
 
+<style>
+    .product-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
 
+    .product-item {
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.8); /* Adjust transparency */
+        padding: 15px;
+        margin-bottom: 50px;
+    }
+
+        .product-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+    .container {
+        padding: 20px 0;
+    }
+
+    /* Override default hyperlink styles */
+    a {
+        color: inherit; /* Use the parent element's color */
+        text-decoration: none; /* Remove underline */
+    }
+
+        a:hover {
+            color: inherit; /* Use the parent element's color */
+            text-decoration: none; /* Remove underline on hover */
+        }
+
+</style>
 
 
