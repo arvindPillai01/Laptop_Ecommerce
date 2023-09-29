@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+}
+
+@model List<Laptop_Ecommerce.Models.CartItemModel>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<h2>Cart</h2>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width: 150px;"><img src="@item.ImageUrl" alt="@item.ProductName" class="img-fluid"></td>
+                    <td>@item.ProductName</td>
+                    <td>@item.Quantity</td>
+                    <td>$@item.Price</td>
+                    <td>$@(item.Quantity * item.Price)</td>
+                </tr>
+            }
+
+            <tr>
+                <td colspan="4" class="text-right"><strong>Total Cost:</strong></td>
+                <td>$@Model.Sum(item => item.Quantity * item.Price)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button style="padding-right:10px," class="btn btn-primary float-right" onclick="redirectToCheckout()">Checkout</button>
+
+</div>
+
+<script>
+    function redirectToCheckout() {
+        window.location.href = '@Url.Action("Checkout", "Home")';
+    }
+</script>

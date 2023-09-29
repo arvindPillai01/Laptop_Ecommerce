@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="~/Views/Products/Detailstyle.css">
+
+<h2>Details</h2>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card product-image-card">
+            <img src="@Model.ImageUrl" alt="@Model.Name" class="card-img-top img-fluid">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="product-details">
+            <h2 class="product-name">@Model.Name</h2>
+            <p class="product-price">Price: $@Model.Price</p>
+            <div class="form-group product-quantity">
+                <label for="quantity">Quantity:</label>
+                <input type="number" class="form-control" id="quantity" value="1" min="1">
+            </div>
+            <button class="btn btn-primary add-to-cart-button" onclick="addToCart(@Model.Id)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card product-description-card">
+            <div class="card-body">
+                <h5 class="card-title">Description</h5>
+                <p class="card-text">@Model.Description</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<script>
+        function addToCart(productId) {
+            $.ajax({
+                type: "POST",
+                url: "/Products/AddToCart/" + productId,
+                success: function (result) {
+                    if (result.success) {
+                        alert(result.message);
+                    } else {
+                        alert("Failed to add product to cart.");
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while adding the product to the cart.");
+                }
+            });
+        }
+    </script>*@
+
+<script>
+    function addToCart(productId) {
+  
+        var quantity = parseInt(document.getElementById("quantity").value, 10);
+
+        // Ensure the quantity is at least 1
+        if (quantity < 1) {
+            alert("Please enter a valid quantity.");
+            return;
+        }
+
+        // Make the AJAX request with both productId and quantity
+        $.ajax({
+            type: "POST",
+            url: "/Products/AddToCart/" + productId,
+            data: { quantity: quantity }, 
+            success: function (result) {
+                if (result.success) {
+                    alert(result.message);
+                } else {
+                    alert("Failed to add product to cart.");
+                }
+            },
+            error: function () {
+                alert("An error occurred while adding the product to the cart.");
+            }
+        });
+    }
+</script>

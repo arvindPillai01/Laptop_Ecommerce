@@ -1,0 +1,40 @@
+﻿.table {
+    font-size: 16px;
+    border:none
+}
+
+/* Center the product images */
+    .table img {
+        display: block;
+        margin: 0 auto;
+        font-size: 14px; /* Adjust the font size of the product details */
+        vertical-align: middle;
+        width:130px;
+        padding:2px;
+    }
+
+/* Optional: Add some padding to the table cells */
+.table td,
+.table th {
+    padding: 5px;
+    vertical-align:middle;
+    text-align:center;
+}
+
+.product-name{
+    text-align:left;
+}
+
+/* Optional: Style for the table header */
+.table thead th {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Optional: Style for the table rows */
+.table tbody tr {
+    border-bottom: 1px solid #dee2e6;
+}
+
+}
+

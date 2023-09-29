@@ -1,0 +1,29 @@
+﻿.product-image-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    background-color:darkgrey;
+}
+
+.product-details {
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-description-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.product-quantity .input {
+    width: 10px;
+}
+
+.add-to-cart-button {
+    width: 100%;
+}
